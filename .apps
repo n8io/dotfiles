@@ -1,0 +1,48 @@
+#!/bin/bash
+
+# Fetch latest version of homebrew and formula.
+brew update
+
+# Tap the Caskroom/Cask repository from Github using HTTPS.
+brew tap caskroom/cask
+
+brew install \
+  bat \
+  git \
+  ;
+
+brew cask install \
+  divvy \
+  docker \
+  google-chrome \
+  insominia \
+  iterm2 \
+  licecap \
+  rocket \
+  skitch \
+  slack \
+  spectacle \
+  visual-studio-code \
+  zoomus \
+  zsh \
+  ;
+
+brew cleanup                      # For all installed or specific formulae, remove any older versions from the cellar.
+
+# Install xcode cli tools
+xcode-select --install
+
+# Install Oh My Zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+# Install nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+
+# Install Node v10
+nvm install 10
+
+# Default to Node v10
+echo 10 > ~/.nvmrc
+
+# Install Pure zsh prompt
+npm install --global pure-prompt
