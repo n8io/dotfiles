@@ -51,4 +51,7 @@ nvm install 10
 echo 10 > ~/.nvmrc
 
 # Install Pure zsh prompt
-npm install --global pure-prompt
+npm install --global \
+  git-mob \
+  pure-prompt \
+  ;
