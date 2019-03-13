@@ -1,0 +1,52 @@
+#!/bin/bash
+#~/.bashrc_work
+if [ -f "~/.$(whoami)" ]; then
+  source ~/.$(whoami)
+fi
+
+echo "Setting up terminal session..."
+
+echo -n "  Adding custom functions..."
+
+echo "\033[32m ✔\033[0m"
+
+# Custom aliases
+
+echo "Terminal session setup complete \033[32m✔\033[0m."
+
+# Custom dir aliases
+n8io() { mkdir -p "${HOME}/code/n8io" && cd "${HOME}/code/n8io" }
+zeal() { mkdir -p "${HOME}/code/zeal" && cd "${HOME}/code/zeal" }
+learn() { mkdir -p "${HOME}/code/learnings" && cd "${HOME}/code/learnings" }
+cu() { cd "${CLI_UTILS_PATH}" }
+
+# Export defaults
+export \
+  NODE_ENV="development" \
+  EDITOR="code" \
+  ;
+
+# Additional terminal modules 👇
+CLI_UTILS_PATH=${CLI_UTILS_PATH:-"/Users/$(whoami)/code/n8io/cli-utils"}
+source "${CLI_UTILS_PATH}/utils/index.sh" >/dev/null
+source "${CLI_UTILS_PATH}/node/index.sh" >/dev/null
+source "${CLI_UTILS_PATH}/npm/index.sh" >/dev/null
+source "${CLI_UTILS_PATH}/nvm/index.sh" >/dev/null
+source "${CLI_UTILS_PATH}/yarn/index.sh" >/dev/null
+source "${CLI_UTILS_PATH}/git/index.sh" >/dev/null
+source "${CLI_UTILS_PATH}/docker/index.sh" >/dev/null
+source "${CLI_UTILS_PATH}/mac/index.sh" >/dev/null
+
+# Give you time to see if anything failed
+dots() {
+  SLEEP=0.1
+  echo -n "."
+  sleep $SLEEP
+  echo -n "."
+  sleep $SLEEP
+  echo -n "."
+  sleep $SLEEP
+}
+echo -n "\nFiring up thrusters 🚀"
+dots && echo " \033[32m✔\033[0m."
+# END Additional terminal modules ☝️

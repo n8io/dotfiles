@@ -1,4 +1,5 @@
 #!/bin/bash
+#~/.apps
 
 # Fetch latest version of homebrew and formula.
 brew update
