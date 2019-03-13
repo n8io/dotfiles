@@ -159,4 +159,8 @@ SPACESHIP_BATTERY_THRESHOLD=25
 # Tell Antigen that you're done.
 antigen apply
 
+# Autoload pure-prompt
+autoload -U promptinit; promptinit
+prompt pure
+
 source ~/.bash_profile
