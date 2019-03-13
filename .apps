@@ -31,10 +31,8 @@ brew cask install \
   zsh \
   ;
 
-brew cleanup                      # For all installed or specific formulae, remove any older versions from the cellar.
-
-# Install xcode cli tools
-xcode-select --install
+# For all installed or specific formulae, remove any older versions from the cellar.
+brew cleanup
 
 # Install Oh My Zsh
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
