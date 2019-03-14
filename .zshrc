@@ -148,7 +148,7 @@ antigen bundle command-not-found
 
 # Load the theme.
 #antigen theme refined
-antigen theme https://github.com/denysdovhan/spaceship-prompt spaceship
+antigen theme denysdovhan/spaceship-prompt
 
 SPACESHIP_GIT_SYMBOL=
 SPACESHIP_PACKAGE_SHOW=false
