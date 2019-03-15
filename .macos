@@ -22,9 +22,19 @@ COMPUTER_NAME=z34l
 
 ## Nate Customs #######################
 
-## MENU BAR
+## Menubar extras
+defaults write com.apple.systemuiserver menuExtras -array \
+  "/System/Library/CoreServices/Menu Extras/Battery.menu" \
+  "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
+  "/System/Library/CoreServices/Menu Extras/Clock.menu" \
+  "/System/Library/CoreServices/Menu Extras/Volume.menu" \
+  ;
+
+# Hide AirPlay
+defaults write com.apple.airplay showInMenuBarIfPresent -bool false
+
 # Show battery percentage
-defaults write com.apple.menuextra.battery ShowPercent YES
+defaults write com.apple.menuextra.battery ShowPercent -bool true
 
 # Show seconds in menu bar
 defaults write com.apple.menuextra.clock "DateFormat" 'EEE d MMM hh:mm:ss'
@@ -42,6 +52,9 @@ defaults write com.apple.menuextra.clock "DateFormat" 'EEE d MMM hh:mm:ss'
 # Enable 3 finger drag of windows
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
 defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+
+# Enable tap to click
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 ## END Trackpad
 
 ## END Nate Customs ###################
